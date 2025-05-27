@@ -47,7 +47,9 @@ header {
 
 .logo-img {
   height: 60px;
-  width: auto;
+  width: 60px;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
 nav ul {
@@ -223,18 +225,9 @@ section h2 {
   background-color: var(--marrom);
 }
 
-.wpp-link {
-  display: inline-flex;
-  align-items: center;
-  margin-top: 30px;
-  text-decoration: none;
-  background-color: #25d366;
-  color: white;
-  padding: 12px 20px;
-  border-radius: 30px;
-  font-weight: 600;
-  gap: 10px;
-  transition: background 0.3s;
+.wpp-link img {
+  width: 24px;
+  height: 24px;
 }
 
 .wpp-link:hover {
