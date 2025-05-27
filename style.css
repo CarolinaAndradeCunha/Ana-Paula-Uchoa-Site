@@ -225,16 +225,42 @@ section h2 {
   background-color: var(--marrom);
 }
 
+.wpp-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #25d366; /* Verde WhatsApp */
+  color: white;
+  padding: 12px 24px;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  box-shadow: 0 4px 8px rgba(37, 211, 102, 0.4);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.wpp-link:hover,
+.wpp-link:focus {
+  background-color: #1eb75b; /* Verde mais escuro */
+  box-shadow: 0 6px 12px rgba(30, 183, 91, 0.6);
+  outline: none;
+}
+
 .wpp-link img {
   width: 24px;
   height: 24px;
   border-radius: 50%;
-  background-color: white;
-  padding: 2px;
+  background-color: transparent;
+  padding: 0;
+  filter: brightness(100%);
+  transition: filter 0.3s ease;
 }
 
-.wpp-link:hover {
-  background-color: #1eb75b;
+.wpp-link:hover img,
+.wpp-link:focus img {
+  filter: brightness(90%);
 }
 
 .redes-sociais {
