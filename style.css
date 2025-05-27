@@ -320,3 +320,20 @@ footer {
   opacity: 1;
   transform: translateY(0);
 }
+
+p, ul, ol, h1, h2, h3, h4, h5, h6, button {
+  margin-bottom: 12px;
+}
+
+.btn-agendar,
+.contato button {
+  margin-top: 12px;
+}
+
+.wpp-link img {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: white;
+  padding: 2px;
+}
