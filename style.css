@@ -45,6 +45,11 @@ header {
   color: var(--marrom);
 }
 
+.logo-img {
+  height: 60px;
+  width: auto;
+}
+
 nav ul {
   display: flex;
   gap: 20px;
