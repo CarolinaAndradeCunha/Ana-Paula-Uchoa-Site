@@ -228,18 +228,13 @@ section h2 {
 .wpp-link img {
   width: 24px;
   height: 24px;
+  border-radius: 50%;
+  background-color: white;
+  padding: 2px;
 }
 
 .wpp-link:hover {
   background-color: #1eb75b;
-}
-
-.wpp-link img {
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  background-color: white;
-  padding: 2px;
 }
 
 .redes-sociais {
