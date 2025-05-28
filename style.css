@@ -151,24 +151,6 @@ section h2 {
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.02);
 }
 
-.abordagem .foto-ana,
-.servicos .foto-espontanea {
-  width: 180px;
-  height: 180px;
-  border-radius: 50%;
-  object-fit: cover;
-  float: right;
-  margin-left: 24px;
-  margin-bottom: 20px;
-  box-shadow: 0 0 6px rgba(0, 0, 0, 0.05);
-  transition: transform 0.3s ease;
-}
-
-.abordagem .foto-ana:hover,
-.servicos .foto-espontanea:hover {
-  transform: scale(1.05);
-}
-
 .sobre img {
   width: 180px;
   height: 180px;
