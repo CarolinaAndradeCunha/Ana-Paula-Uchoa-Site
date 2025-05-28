@@ -80,13 +80,10 @@ section {
 
 .hero {
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
+  justify-content: center;
   gap: 40px;
-  background-color: var(--caramelo);
-  padding: 48px 32px;
-  border-radius: 20px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.04);
+  padding: 60px 40px;
 }
 
 .foto-ana {
@@ -94,8 +91,6 @@ section {
   height: 260px;
   border-radius: 50%;
   object-fit: cover;
-  display: block;
-  margin: 0 auto;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.08);
 }
 
@@ -154,25 +149,23 @@ section h2 {
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.02);
 }
 
-.sobre img {
+.container-sobre {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.container-sobre img {
   width: 180px;
   height: 180px;
   border-radius: 50%;
   object-fit: cover;
   object-position: top;
-  float: right;
-  margin-left: 24px;
-  margin-bottom: 20px;
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.05);
 }
 
-.sobre p {
-  margin-bottom: 16px;
-}
-
-.sobre .valores {
-  font-weight: bold;
-  color: #5a5a5a;
+.container-sobre p {
+  flex: 1;
 }
 
 .abordagem ul,
@@ -308,18 +301,23 @@ footer {
   .hero {
     flex-direction: column;
     text-align: center;
-    padding: 32px 20px;
   }
 
   .foto-ana {
-    width: 200px;
-    height: 200px;
+    margin: 0 auto 20px;
   }
 
-  .sobre img {
-    float: none;
-    display: block;
+  .container-sobre {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .container-sobre img {
     margin: 0 auto 24px;
+  }
+
+  .container-sobre p {
+    text-align: justify;
   }
 
   nav ul {
