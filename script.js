@@ -1,37 +1,27 @@
- document.addEventListener("DOMContentLoaded", () => {
-      const botoes = document.querySelectorAll(".seta");
-      const carrossel = document.querySelector(".carrossel");
-      const itens = document.querySelectorAll(".carrossel-item");
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+  link.addEventListener('click', function(e) {
+    e.preventDefault()
+    const target = document.querySelector(this.getAttribute('href'))
+    if (target) {
+      target.scrollIntoView({
+        behavior: 'smooth'
+      })
+    }
+  })
+})
 
-      let indice = 0;
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('reveal')
+    }
+  })
+})
 
-      function mostrarItem(index) {
-        itens.forEach(item => item.classList.remove("ativo"));
-        itens[index].classList.add("ativo");
-      }
+document.querySelectorAll('.reveal-on-scroll').forEach(el => {
+  observer.observe(el)
+})
 
-      function moverCarrossel(direcao) {
-        indice = (indice + direcao + itens.length) % itens.length;
-        mostrarItem(indice);
-      }
-
-      botoes.forEach(btn => {
-        btn.addEventListener("click", () => {
-          moverCarrossel(btn.classList.contains("esquerda") ? -1 : 1);
-        });
-      });
-
-      const elementos = document.querySelectorAll('.reveal-on-scroll');
-
-      const observer = new IntersectionObserver(entradas => {
-        entradas.forEach(entrada => {
-          if (entrada.isIntersecting) {
-            entrada.target.classList.add('aparecer');
-          }
-        });
-      }, {
-        threshold: 0.1
-      });
-
-      elementos.forEach(el => observer.observe(el));
-    });
+window.addEventListener('load', () => {
+  document.body.classList.add('loaded')
+})
