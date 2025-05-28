@@ -1,7 +1,7 @@
 :root {
   --marrom: #6e3a27;
   --laranja: #d88f4d;
-  --caramelo: #f5e4d0;
+  --caramelo: #f5e4d0;  
   --amarelo: #ffe08a;
   --cinza-claro: #f8f5f3;
 
@@ -22,14 +22,11 @@ body {
   line-height: 1.8;
   padding: 10px;
   opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.8s ease, visibility 0s linear 0.8s;
+  transition: opacity 0.8s ease;
 }
 
 body.loaded {
   opacity: 1;
-  visibility: visible;
-  transition-delay: 0s;
 }
 
 header {
@@ -49,10 +46,8 @@ header {
 }
 
 .logo-img {
-  height: auto;
-  max-height: 60px;
-  width: auto;
-  max-width: 60px;
+  height: 60px;
+  width: 60px;
   border-radius: 50%;
   object-fit: cover;
 }
@@ -66,264 +61,295 @@ nav ul {
 nav a {
   text-decoration: none;
   color: var(--marrom);
-  font-weight: bold;
+  font-weight: 600;
   transition: color 0.3s;
+  font-size: 1rem;
 }
 
 nav a:hover {
   color: var(--laranja);
 }
 
-/* HERO */
+main {
+  padding: 40px 20px;
+}
+
+section {
+  margin-bottom: 64px;
+}
+
 .hero {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 30px;
-  margin-top: 40px;
+  gap: 40px;
+  background-color: var(--caramelo);
+  padding: 48px 32px;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.04);
 }
 
 .foto-ana {
-  width: 280px;
-  height: auto;
-  border-radius: 10px;
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
   object-fit: cover;
+  display: block;
+  margin: 0 auto;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.08);
 }
 
 .apresentacao-texto {
   max-width: 600px;
-  padding: 0 16px;
 }
 
 .apresentacao-texto h1 {
-  font-family: var(--fonte-titulo);
-  color: var(--marrom);
   font-size: 2.4rem;
-  line-height: 1.3;
-}
-
-.crp {
-  font-style: italic;
-  margin-bottom: 16px;
-  color: #555;
-}
-
-.frase {
-  margin: 16px 0;
-  font-size: 1.1rem;
-  font-weight: 500;
-}
-
-.btn-agendar {
-  background-color: var(--laranja);
-  color: white;
-  border: none;
-  padding: 12px 24px;
-  border-radius: 30px;
-  cursor: pointer;
-  font-size: 1rem;
-  transition: background-color 0.3s;
-}
-
-.btn-agendar:hover {
-  background-color: var(--marrom);
-}
-
-.btn-agendar:focus {
-  outline: 2px solid var(--amarelo);
-  outline-offset: 4px;
-}
-
-section {
-  padding: 40px 0;
-}
-
-h2 {
-  font-family: var(--fonte-titulo);
   color: var(--marrom);
-  font-size: 2rem;
-  margin-bottom: 20px;
-  line-height: 1.3;
-}
-
-h3 {
   font-family: var(--fonte-titulo);
-  color: var(--laranja);
-  margin-top: 30px;
-  font-size: 1.4rem;
-  line-height: 1.3;
-}
-
-section p,
-section li {
   margin-bottom: 12px;
-  font-size: 1rem;
 }
 
-section img {
-  max-width: 100%;
-  border-radius: 8px;
-}
-
-ul {
-  padding-left: 20px;
-}
-
-li {
-  margin-bottom: 8px;
-}
-
-.carrossel-container {
-  position: relative;
-  overflow: hidden;
-}
-
-.carrossel {
-  display: flex;
-  gap: 10px;
-  transition: transform 0.5s ease;
-}
-
-.carrossel-item {
-  min-width: 100%;
-  max-width: 100%;
-  display: none;
-  border-radius: 8px;
-}
-
-.carrossel-item.ativo {
+.apresentacao-texto .crp {
+  font-weight: bold;
+  margin-bottom: 10px;
   display: block;
 }
 
-.seta {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: var(--marrom);
+.apresentacao-texto .frase {
+  font-style: italic;
+  margin: 16px 0;
+  font-size: 1.1rem;
+}
+
+.btn-agendar {
+  background-color: #25d366;
   color: white;
   border: none;
-  font-size: 24px;
+  padding: 12px 24px;
+  font-size: 1rem;
+  border-radius: 30px;
   cursor: pointer;
-  padding: 8px 12px;
+  transition: background 0.3s ease;
+  margin-top: 12px;
+}
+
+.btn-agendar:hover {
+  background-color: #1eb75b;
+}
+
+section h2 {
+  color: var(--marrom);
+  font-family: var(--fonte-titulo);
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.sobre,
+.abordagem,
+.servicos {
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.02);
+}
+
+.sobre img {
+  width: 180px;
+  height: 180px;
   border-radius: 50%;
-  z-index: 1;
+  object-fit: cover;
+  object-position: top;
+  float: right;
+  margin-left: 24px;
+  margin-bottom: 20px;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.05);
 }
 
-.seta:hover {
-  background-color: var(--laranja);
+.sobre p {
+  margin-bottom: 16px;
 }
 
-.seta.esquerda {
-  left: 10px;
+.sobre .valores {
+  font-weight: bold;
+  color: #5a5a5a;
 }
 
-.seta.direita {
-  right: 10px;
-}
-
-form {
+.abordagem ul,
+.servicos ul {
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  max-width: 500px;
-  padding: 0 16px;
+  gap: 14px;
+  list-style: disc;
+  padding-left: 24px;
 }
 
-input,
-textarea {
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  font-family: var(--fonte-texto);
+.abordagem li,
+.servicos li {
+  background-color: var(--cinza-claro);
+  padding: 14px 18px;
+  border-radius: 10px;
+  font-weight: 500;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.03);
 }
 
-button[type="submit"] {
-  background-color: var(--laranja);
-  color: white;
-  border: none;
+.contato form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  max-width: 600px;
+  margin-top: 24px;
+}
+
+.contato label {
+  font-weight: 600;
+}
+
+.contato input,
+.contato textarea {
   padding: 12px;
-  border-radius: 8px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-family: var(--fonte-texto);
+  background-color: #fff;
+}
+
+.contato button {
+  padding: 14px;
+  background-color: var(--laranja);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
   cursor: pointer;
+  transition: background 0.3s ease;
+  margin-top: 12px;
 }
 
-button[type="submit"]:hover {
+.contato button:hover {
   background-color: var(--marrom);
-}
-
-.endereco {
-  margin-top: 20px;
-  font-style: italic;
 }
 
 .wpp-link {
   display: inline-flex;
   align-items: center;
-  margin-top: 20px;
-  text-decoration: none;
-  color: #25d366;
-  font-weight: bold;
   gap: 8px;
+  padding: 8px 14px;
+  background-color: #25d366;
+  color: white;
+  font-weight: 600;
+  border-radius: 30px;
+  text-decoration: none;
+  font-family: Arial, sans-serif;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  cursor: pointer;
+  user-select: none;
 }
 
 .wpp-link img {
   width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: white;
+  padding: 2px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.wpp-link:hover {
+  background-color: #128c4a;
+  transform: scale(1.05);
 }
 
 .redes-sociais {
-  margin-top: 20px;
+  margin-top: 36px;
+  font-weight: 600;
+  color: var(--marrom);
   display: flex;
   align-items: center;
   gap: 10px;
 }
 
+.redes-sociais span {
+  font-weight: bold;
+  color: var(--laranja);
+}
+
 .redes-sociais a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   text-decoration: none;
   color: var(--marrom);
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.redes-sociais a:hover {
+  color: var(--laranja);
+}
+
+.redes-sociais img {
+  width: 20px;
+  height: 20px;
 }
 
 footer {
   text-align: center;
-  padding: 20px;
+  padding: 24px;
   background-color: var(--caramelo);
-  margin-top: 40px;
-  font-size: 0.9rem;
-}
-
-.reveal-on-scroll {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-.reveal-on-scroll.visible {
-  opacity: 1;
-  transform: translateY(0);
+  color: #6b4b3a;
+  font-size: 0.95rem;
+  margin-top: 48px;
+  border-top: 4px solid var(--amarelo);
 }
 
 @media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 32px 20px;
+  }
+
+  .foto-ana {
+    width: 200px;
+    height: 200px;
+  }
+
+  .sobre img {
+    float: none;
+    display: block;
+    margin: 0 auto 24px;
+  }
+
   nav ul {
     flex-direction: column;
     align-items: center;
     gap: 12px;
-  }
-
-  .hero {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .foto-ana {
-    width: 100%;
-    max-width: 320px;
-  }
-
-  .carrossel-item {
-    max-width: 100%;
+    margin-top: 10px;
   }
 }
 
-@media (max-width: 480px) {
-  form {
-    padding: 0 16px;
-  }
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+
+.reveal-on-scroll.reveal {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+p,
+ul,
+ol,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+button {
+  margin-bottom: 12px;
 }
