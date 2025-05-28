@@ -131,6 +131,7 @@ section {
   border-radius: 30px;
   cursor: pointer;
   transition: background 0.3s ease;
+  margin-top: 12px;
 }
 
 .btn-agendar:hover {
@@ -222,6 +223,7 @@ section h2 {
   font-weight: bold;
   cursor: pointer;
   transition: background 0.3s ease;
+  margin-top: 12px;
 }
 
 .contato button:hover {
@@ -233,7 +235,7 @@ section h2 {
   align-items: center;
   gap: 8px;
   padding: 8px 14px;
-  background-color: #25D366;
+  background-color: #25d366;
   color: white;
   font-weight: 600;
   border-radius: 30px;
@@ -251,11 +253,11 @@ section h2 {
   border-radius: 50%;
   background-color: white;
   padding: 2px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 .wpp-link:hover {
-  background-color: #128C4A;
+  background-color: #128c4a;
   transform: scale(1.05);
 }
 
@@ -339,19 +341,15 @@ footer {
   transform: translateY(0);
 }
 
-p, ul, ol, h1, h2, h3, h4, h5, h6, button {
+p,
+ul,
+ol,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+button {
   margin-bottom: 12px;
-}
-
-.btn-agendar,
-.contato button {
-  margin-top: 12px;
-}
-
-.wpp-link img {
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  background-color: white;
-  padding: 2px;
 }
