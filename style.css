@@ -193,6 +193,180 @@ section h2 {
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.03);
 }
 
+.carousel-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  max-width: 900px;
+  margin: 0 auto 40px;
+  position: relative;
+}
+
+.arrow {
+  background: transparent;
+  border: none;
+  font-size: 2.8rem;
+  color: var(--marrom);
+  cursor: pointer;
+  transition: color 0.3s ease;
+  user-select: none;
+  padding: 0 8px;
+  line-height: 1;
+}
+
+.arrow:hover {
+  color: var(--laranja);
+}
+
+.arrow:focus {
+  outline: 2px solid var(--laranja);
+  outline-offset: 4px;
+}
+
+.carousel {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-grow: 1;
+  justify-content: center;
+  overflow: visible;
+}
+
+.carousel-previews {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  user-select: none;
+}
+
+.left-previews {
+  margin-right: 16px;
+}
+
+.right-previews {
+  margin-left: 16px;
+}
+
+.preview-img {
+  width: 100px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 12px;
+  filter: blur(3px);
+  opacity: 0.6;
+  transition: filter 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.12);
+}
+
+.preview-img:hover,
+.preview-img:focus {
+  filter: blur(0);
+  opacity: 1;
+  transform: scale(1.1);
+  outline: none;
+  box-shadow: 0 0 12px var(--laranja);
+}
+
+.carousel-main {
+  width: 400px;
+  height: 280px;
+  border-radius: 16px;
+  object-fit: cover;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  user-select: none;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.carousel-main:hover,
+.carousel-main:focus {
+  transform: scale(1.03);
+  outline: none;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.85);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.modal[aria-hidden="false"] {
+  display: flex;
+}
+
+.modal img {
+  max-width: 90vw;
+  max-height: 90vh;
+  border-radius: 16px;
+  box-shadow: 0 0 20px rgba(255,255,255,0.2);
+  user-select: none;
+}
+
+.modal-close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 3rem;
+  color: white;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-weight: 700;
+  user-select: none;
+  transition: color 0.3s ease;
+}
+
+.modal-close:hover,
+.modal-close:focus {
+  color: var(--laranja);
+  outline: none;
+}
+
+@media (max-width: 768px) {
+  .carousel-container {
+    flex-direction: column;
+    max-width: 100%;
+  }
+
+  .arrow {
+    font-size: 2.2rem;
+    margin: 12px 0;
+  }
+
+  .carousel {
+    flex-direction: row;
+    gap: 8px;
+  }
+
+  .carousel-previews {
+    flex-direction: row;
+    gap: 8px;
+    margin: 0 8px;
+  }
+
+  .preview-img {
+    width: 70px;
+    height: 50px;
+  }
+
+  .carousel-main {
+    width: 300px;
+    height: 210px;
+    margin: 0 8px;
+  }
+}
+
 .contato form {
   display: flex;
   flex-direction: column;
