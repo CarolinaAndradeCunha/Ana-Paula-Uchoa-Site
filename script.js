@@ -1,72 +1,37 @@
-document.querySelectorAll('a[href^="#"]').forEach(link => {
-  link.addEventListener('click', function(e) {
-    e.preventDefault()
-    const target = document.querySelector(this.getAttribute('href'))
-    if (target) {
-      target.scrollIntoView({
-        behavior: 'smooth'
-      })
-    }
-  })
-})
+ document.addEventListener("DOMContentLoaded", () => {
+      const botoes = document.querySelectorAll(".seta");
+      const carrossel = document.querySelector(".carrossel");
+      const itens = document.querySelectorAll(".carrossel-item");
 
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('reveal')
-    }
-  })
-})
+      let indice = 0;
 
-document.querySelectorAll('.reveal-on-scroll').forEach(el => {
-  observer.observe(el)
-})
+      function mostrarItem(index) {
+        itens.forEach(item => item.classList.remove("ativo"));
+        itens[index].classList.add("ativo");
+      }
 
-window.addEventListener('load', () => {
-  document.body.classList.add('loaded')
-})
+      function moverCarrossel(direcao) {
+        indice = (indice + direcao + itens.length) % itens.length;
+        mostrarItem(indice);
+      }
 
-let indiceAtual = 0;
+      botoes.forEach(btn => {
+        btn.addEventListener("click", () => {
+          moverCarrossel(btn.classList.contains("esquerda") ? -1 : 1);
+        });
+      });
 
-const carrosselContainer = document.querySelector('.carrossel-container');
-const carrosselList = document.querySelector('#carrossel-list');
-const itens = document.querySelectorAll('.carrossel-item');
-const btnPrev = document.querySelector('.carrossel-btn-prev');
-const btnNext = document.querySelector('.carrossel-btn-next');
+      const elementos = document.querySelectorAll('.reveal-on-scroll');
 
-function atualizarCarrossel() {
-  const total = itens.length;
+      const observer = new IntersectionObserver(entradas => {
+        entradas.forEach(entrada => {
+          if (entrada.isIntersecting) {
+            entrada.target.classList.add('aparecer');
+          }
+        });
+      }, {
+        threshold: 0.1
+      });
 
-  itens.forEach((item, i) => {
-    item.classList.remove('ativo', 'anterior', 'proximo');
-
-    if (i === indiceAtual) {
-      item.classList.add('ativo');
-    } else if (i === (indiceAtual - 1 + total) % total) {
-      item.classList.add('anterior');
-    } else if (i === (indiceAtual + 1) % total) {
-      item.classList.add('proximo');
-    }
-  });
-}
-
-btnPrev.addEventListener('click', () => {
-  indiceAtual = (indiceAtual - 1 + itens.length) % itens.length;
-  atualizarCarrossel();
-});
-
-btnNext.addEventListener('click', () => {
-  indiceAtual = (indiceAtual + 1) % itens.length;
-  atualizarCarrossel();
-});
-
-itens.forEach(item => {
-  item.addEventListener('click', () => {
-    if (item.classList.contains('ativo')) {
-      const urlImg = item.style.backgroundImage.slice(5, -2); 
-      window.open(urlImg, '_blank');
-    }
-  });
-});
-
-atualizarCarrossel();
+      elementos.forEach(el => observer.observe(el));
+    });
