@@ -203,21 +203,87 @@ section h2 {
   max-width: 600px;
   margin: 0 auto;
   overflow: hidden;
+  height: 400px; /* ajuste conforme precisar */
+  background: #000; /* opcional, só pra contrastar */
 }
 
-.carrossel {
-  display: flex;
-  transition: transform 0.5s ease;
+.carrossel-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  height: 100%;
+  user-select: none;
 }
 
 .carrossel-item {
-  display: none;
-  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 60%;
+  height: 80%;
   border-radius: 12px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transform: translate(-50%, -50%) scale(0.6);
+  filter: blur(4px);
+  opacity: 0.5;
+  transition: transform 0.5s ease, filter 0.5s ease, opacity 0.5s ease;
+  cursor: pointer;
+  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+  z-index: 1;
 }
 
 .carrossel-item.ativo {
-  display: block;
+  transform: translate(-50%, -50%) scale(1);
+  filter: none;
+  opacity: 1;
+  z-index: 5;
+}
+
+.carrossel-item.anterior,
+.carrossel-item.proximo {
+  width: 40%;
+  height: 60%;
+  filter: blur(3px);
+  opacity: 0.4;
+  z-index: 3;
+}
+
+.carrossel-item.anterior {
+  transform: translate(calc(-150%), -50%) scale(0.6);
+}
+
+.carrossel-item.proximo {
+  transform: translate(calc(150%), -50%) scale(0.6);
+}
+
+.carrossel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.7);
+  border: none;
+  font-size: 2rem;
+  padding: 0.3rem 0.8rem;
+  cursor: pointer;
+  border-radius: 50%;
+  user-select: none;
+  z-index: 10;
+  transition: background-color 0.3s ease;
+}
+
+.carrossel-btn:hover {
+  background: rgba(255, 255, 255, 1);
+}
+
+.carrossel-btn-prev {
+  left: 0.5rem;
+}
+
+.carrossel-btn-next {
+  right: 0.5rem;
 }
 
 .seta {
