@@ -25,3 +25,73 @@ document.querySelectorAll('.reveal-on-scroll').forEach(el => {
 window.addEventListener('load', () => {
   document.body.classList.add('loaded')
 })
+
+const photos = document.querySelectorAll('.carousel-photo')
+const modal = document.getElementById('modal')
+const modalImg = document.getElementById('modal-img')
+const closeBtn = document.querySelector('.modal-close')
+const leftArrow = document.querySelector('.left-arrow')
+const rightArrow = document.querySelector('.right-arrow')
+
+// Posições lógicas (indices do array photos) - que classe cada foto tem
+// Inicial:
+// main = 2 (central)
+// leftSmall = 1
+// rightSmall = 3
+// leftHidden = 0
+// rightHidden = 4
+
+let positions = [0, 1, 2, 3, 4] // ordem das fotos conforme posições acima
+
+function updateCarousel() {
+  photos.forEach((photo, i) => {
+    photo.classList.remove(
+      'main-photo',
+      'left-small',
+      'right-small',
+      'left-hidden',
+      'right-hidden'
+    )
+  })
+
+  photos[positions[0]].classList.add('left-hidden')
+  photos[positions[1]].classList.add('left-small')
+  photos[positions[2]].classList.add('main-photo')
+  photos[positions[3]].classList.add('right-small')
+  photos[positions[4]].classList.add('right-hidden')
+}
+
+function rotateRight() {
+  positions.unshift(positions.pop())
+  updateCarousel()
+}
+
+function rotateLeft() {
+  positions.push(positions.shift())
+  updateCarousel()
+}
+
+leftArrow.addEventListener('click', rotateLeft)
+rightArrow.addEventListener('click', rotateRight)
+
+photos.forEach(photo => {
+  photo.addEventListener('click', () => {
+    if (photo.classList.contains('main-photo')) {
+      modalImg.src = photo.src
+      modal.classList.remove('hidden')
+    }
+  })
+})
+
+closeBtn.addEventListener('click', () => {
+  modal.classList.add('hidden')
+})
+
+modal.addEventListener('click', e => {
+  if (e.target === modal) {
+    modal.classList.add('hidden')
+  }
+})
+
+updateCarousel()
+
