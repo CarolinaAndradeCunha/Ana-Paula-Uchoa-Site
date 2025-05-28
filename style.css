@@ -193,6 +193,56 @@ section h2 {
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.03);
 }
 
+.espaco {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.carrossel-container {
+  position: relative;
+  max-width: 600px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.carrossel {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.carrossel-item {
+  display: none;
+  width: 100%;
+  border-radius: 12px;
+}
+
+.carrossel-item.ativo {
+  display: block;
+}
+
+.seta {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #fff;
+  color: #333;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 50%;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  z-index: 10;
+}
+
+.seta.esquerda {
+  left: 10px;
+}
+
+.seta.direita {
+  right: 10px;
+}
+
 .contato form {
   display: flex;
   flex-direction: column;
