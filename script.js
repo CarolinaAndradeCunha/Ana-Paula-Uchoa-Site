@@ -28,11 +28,48 @@ window.addEventListener('load', () => {
 
 let indiceAtual = 0;
 
-function moverCarrossel(direcao) {
-  const itens = document.querySelectorAll('.carrossel-item');
-  itens[indiceAtual].classList.remove('ativo');
+const carrosselContainer = document.querySelector('.carrossel-container');
+const carrosselList = document.querySelector('#carrossel-list');
+const itens = document.querySelectorAll('.carrossel-item');
+const btnPrev = document.querySelector('.carrossel-btn-prev');
+const btnNext = document.querySelector('.carrossel-btn-next');
 
-  indiceAtual = (indiceAtual + direcao + itens.length) % itens.length;
+let indiceAtual = 0;
 
-  itens[indiceAtual].classList.add('ativo');
+function atualizarCarrossel() {
+  const total = itens.length;
+
+  itens.forEach((item, i) => {
+    item.classList.remove('ativo', 'anterior', 'proximo');
+
+    if (i === indiceAtual) {
+      item.classList.add('ativo');
+    } else if (i === (indiceAtual - 1 + total) % total) {
+      item.classList.add('anterior');
+    } else if (i === (indiceAtual + 1) % total) {
+      item.classList.add('proximo');
+    }
+  });
 }
+
+btnPrev.addEventListener('click', () => {
+  indiceAtual = (indiceAtual - 1 + itens.length) % itens.length;
+  atualizarCarrossel();
+});
+
+btnNext.addEventListener('click', () => {
+  indiceAtual = (indiceAtual + 1) % itens.length;
+  atualizarCarrossel();
+});
+
+itens.forEach(item => {
+  item.addEventListener('click', () => {
+    if (item.classList.contains('ativo')) {
+      // Supondo que você tenha a URL da imagem no atributo data-src (ou ajustar conforme seu HTML)
+      const urlImg = item.style.backgroundImage.slice(5, -2); 
+      window.open(urlImg, '_blank');
+    }
+  });
+});
+
+atualizarCarrossel();
