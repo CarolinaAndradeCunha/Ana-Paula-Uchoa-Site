@@ -33,18 +33,10 @@ const closeBtn = document.querySelector('.modal-close')
 const leftArrow = document.querySelector('.left-arrow')
 const rightArrow = document.querySelector('.right-arrow')
 
-// Posições lógicas (indices do array photos) - que classe cada foto tem
-// Inicial:
-// main = 2 (central)
-// leftSmall = 1
-// rightSmall = 3
-// leftHidden = 0
-// rightHidden = 4
-
-let positions = [0, 1, 2, 3, 4] // ordem das fotos conforme posições acima
+let positions = [0, 1, 2, 3, 4]
 
 function updateCarousel() {
-  photos.forEach((photo, i) => {
+  photos.forEach(photo => {
     photo.classList.remove(
       'main-photo',
       'left-small',
@@ -94,4 +86,3 @@ modal.addEventListener('click', e => {
 })
 
 updateCarousel()
-
