@@ -423,26 +423,33 @@ section h2 {
 .contato input,
 .contato textarea {
   padding: 12px;
+  border-radius: 8px;
   border: 1px solid #ccc;
-  border-radius: 10px;
+  font-size: 1rem;
   font-family: var(--fonte-texto);
-  background-color: #fff;
+  background-color: white;
+  resize: vertical;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+}
+
+.contato textarea {
+  min-height: 120px;
 }
 
 .contato button {
-  padding: 14px;
-  background-color: var(--laranja);
-  color: #fff;
+  background-color: var(--marrom);
+  color: white;
+  padding: 12px 24px;
+  font-size: 1rem;
   border: none;
-  border-radius: 10px;
-  font-weight: bold;
+  border-radius: 8px;
   cursor: pointer;
-  transition: background 0.3s ease;
-  margin-top: 12px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
 }
 
 .contato button:hover {
-  background-color: var(--marrom);
+  background-color: var(--laranja);
 }
 
 .wpp-link {
