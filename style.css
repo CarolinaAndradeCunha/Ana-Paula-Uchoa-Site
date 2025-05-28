@@ -173,7 +173,8 @@ section h2 {
   width: 180px;
   height: 180px;
   border-radius: 50%;
-  object-fit: cover;
+  object-fit: countain;
+  object-position: top;
   float: right;
   margin-left: 24px;
   margin-bottom: 20px;
