@@ -266,31 +266,74 @@ section h2 {
 }
 
 .arrow {
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: var(--caramelo);
   border: none;
-  font-size: 2.4rem;
+  font-size: 2.8rem;
   color: var(--marrom);
-  padding: 12px 18px;
+  padding: 14px 18px;
   border-radius: 50%;
   cursor: pointer;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.15);
-  transition: background-color 0.3s ease;
+  box-shadow: 0 6px 12px rgba(110, 58, 39, 0.3);
+  transition: 
+    background-color 0.3s ease,
+    color 0.3s ease,
+    transform 0.25s ease,
+    box-shadow 0.3s ease;
   user-select: none;
   z-index: 20;
   flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.arrow:hover {
+.arrow:hover,
+.arrow:focus {
   background-color: var(--laranja);
   color: white;
+  box-shadow: 0 8px 20px rgba(216, 143, 77, 0.6);
+  transform: scale(1.15);
+  outline: none;
 }
 
 .left-arrow {
-  margin-right: 10px;
+  margin-right: 12px;
+  box-shadow: 4px 6px 12px rgba(110, 58, 39, 0.25);
 }
 
 .right-arrow {
-  margin-left: 10px;
+  margin-left: 12px;
+  box-shadow: -4px 6px 12px rgba(110, 58, 39, 0.25);
+}
+
+.left-arrow::before {
+  content: '◀';
+  font-weight: 700;
+}
+
+.left-arrow::before,
+.right-arrow::before {
+  cursor: pointer;
+}
+
+.right-arrow::before {
+  content: '▶';
+  font-weight: 700;
+}
+
+@media (max-width: 600px) {
+  .arrow {
+    font-size: 2.4rem;
+    padding: 12px 16px;
+  }
+
+  .left-arrow {
+    margin-right: 8px;
+  }
+
+  .right-arrow {
+    margin-left: 8px;
+  }
 }
 
 .modal {
@@ -362,11 +405,6 @@ section h2 {
   .right-small {
     width: 100px;
     height: 100px;
-  }
-
-  .arrow {
-    font-size: 2rem;
-    padding: 10px 14px;
   }
 }
 
