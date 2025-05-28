@@ -25,3 +25,14 @@ document.querySelectorAll('.reveal-on-scroll').forEach(el => {
 window.addEventListener('load', () => {
   document.body.classList.add('loaded')
 })
+
+let indiceAtual = 0;
+
+function moverCarrossel(direcao) {
+  const itens = document.querySelectorAll('.carrossel-item');
+  itens[indiceAtual].classList.remove('ativo');
+
+  indiceAtual = (indiceAtual + direcao + itens.length) % itens.length;
+
+  itens[indiceAtual].classList.add('ativo');
+}
