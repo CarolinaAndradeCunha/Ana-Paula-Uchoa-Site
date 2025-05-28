@@ -34,8 +34,6 @@ const itens = document.querySelectorAll('.carrossel-item');
 const btnPrev = document.querySelector('.carrossel-btn-prev');
 const btnNext = document.querySelector('.carrossel-btn-next');
 
-let indiceAtual = 0;
-
 function atualizarCarrossel() {
   const total = itens.length;
 
@@ -65,7 +63,6 @@ btnNext.addEventListener('click', () => {
 itens.forEach(item => {
   item.addEventListener('click', () => {
     if (item.classList.contains('ativo')) {
-      // Supondo que você tenha a URL da imagem no atributo data-src (ou ajustar conforme seu HTML)
       const urlImg = item.style.backgroundImage.slice(5, -2); 
       window.open(urlImg, '_blank');
     }
