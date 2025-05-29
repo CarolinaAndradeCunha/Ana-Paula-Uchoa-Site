@@ -228,7 +228,6 @@ section h2 {
   transform: scale(1.05);
 }
 
-/* ========== Modal ========== */
 .modal {
   display: none; /* escondido inicialmente */
   position: fixed;
