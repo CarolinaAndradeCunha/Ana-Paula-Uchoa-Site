@@ -4,7 +4,7 @@
   --caramelo: #f5e4d0;  
   --amarelo: #ffe08a;
   --cinza-claro: #f8f5f3;
-
+  
   --fonte-titulo: 'Lora', serif;
   --fonte-texto: 'Nunito', sans-serif;
 }
@@ -206,14 +206,14 @@ section h2 {
 }
 
 .galeria {
-  background-color: var(--creme-claro);
+  background-color: var(--cinza-claro);
   padding: 40px 20px;
   text-align: center;
 }
 
 .galeria h2 {
   font-family: var(--fonte-titulo);
-  color: var(--verde-pastel);
+  color: var(--marrom);
   margin-bottom: 20px;
 }
 
@@ -232,6 +232,7 @@ section h2 {
   height: auto;
   border-radius: 15px;
   transition: transform 0.3s;
+  cursor: pointer;
 }
 
 .galeria-imagens img:hover {
@@ -250,6 +251,7 @@ section h2 {
   transform: scale(1.03);
 }
 
+/* Modal */
 .modal {
   display: none;
   position: fixed;
@@ -284,20 +286,6 @@ section h2 {
 
 .fechar:hover {
   color: #ccc;
-}
-
-.galeria {
-  background-color: var(--creme-claro);
-}
-
-.galeria h2 {
-  font-family: var(--fonte-titulo);
-  color: var(--verde-pastel);
-  margin-bottom: 20px;
-}
-
-.contato {
-  background-color: var(--bege);
 }
 
 .contato form {
