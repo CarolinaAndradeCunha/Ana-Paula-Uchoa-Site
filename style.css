@@ -225,6 +225,7 @@ section h2 {
   transform: scale(1.03);
 }
 
+/* Modal */
 .modal {
   display: none;
   position: fixed;
