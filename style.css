@@ -62,12 +62,18 @@ nav a {
   text-decoration: none;
   color: var(--marrom);
   font-weight: 600;
-  transition: color 0.3s;
   font-size: 1rem;
+  transition: color 0.3s, transform 0.2s;
+  outline: none;
 }
 
 nav a:hover {
   color: var(--laranja);
+  transform: scale(1.05);
+}
+
+nav a:focus {
+  outline: none;
 }
 
 main {
@@ -201,9 +207,22 @@ section h2 {
 }
 
 #conheca-espaco h2 {
-  font-size: 2em;
-  margin-bottom: 30px;
-  color: #333;
+  font-size: 2rem;
+  color: var(--marrom);
+  text-align: center;
+  margin-bottom: 1.5rem;
+  position: relative;
+  font-family: 'Georgia', serif;
+}
+
+#conheca-espaco h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background-color: var(--marrom);
+  margin: 8px auto 0;
+  border-radius: 4px;
 }
 
 .galeria-espaco {
@@ -304,6 +323,21 @@ section h2 {
   background-color: var(--marrom);
 }
 
+.endereco {
+  margin-top: 16px;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+  color: var(--marrom);
+}
+
+.endereco::before {
+  content: "📍";
+  font-size: 1.1rem;
+}
+
 .wpp-link {
   display: inline-flex;
   align-items: center;
@@ -319,6 +353,7 @@ section h2 {
   transition: background-color 0.3s ease, transform 0.2s ease;
   cursor: pointer;
   user-select: none;
+  margin-bottom: 24px;
 }
 
 .wpp-link img {
