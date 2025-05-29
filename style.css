@@ -205,12 +205,37 @@ section h2 {
   color: #333;
 }
 
-.galeria-espaco {
+.galeria {
+  background-color: var(--creme-claro);
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.galeria h2 {
+  font-family: var(--fonte-titulo);
+  color: var(--verde-pastel);
+  margin-bottom: 20px;
+}
+
+.galeria-imagens {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, auto);
   gap: 20px;
-  max-width: 1000px;
-  margin: 0 auto;
+  justify-items: center;
+  align-items: center;
+}
+
+.galeria-imagens img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  border-radius: 15px;
+  transition: transform 0.3s;
+}
+
+.galeria-imagens img:hover {
+  transform: scale(1.05);
 }
 
 .imagem-espaco {
@@ -225,7 +250,6 @@ section h2 {
   transform: scale(1.03);
 }
 
-/* Modal */
 .modal {
   display: none;
   position: fixed;
@@ -260,6 +284,20 @@ section h2 {
 
 .fechar:hover {
   color: #ccc;
+}
+
+.galeria {
+  background-color: var(--creme-claro);
+}
+
+.galeria h2 {
+  font-family: var(--fonte-titulo);
+  color: var(--verde-pastel);
+  margin-bottom: 20px;
+}
+
+.contato {
+  background-color: var(--bege);
 }
 
 .contato form {
