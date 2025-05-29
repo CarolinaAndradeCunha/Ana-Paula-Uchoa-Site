@@ -193,6 +193,7 @@ section h2 {
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.03);
 }
 
+/* ========== Galeria Espaço ========== */
 #conheca-espaco {
   padding: 60px 20px;
   background-color: #f9f9f9;
@@ -205,82 +206,49 @@ section h2 {
   color: #333;
 }
 
-.galeria {
-  background-color: var(--cinza-claro);
-  padding: 40px 20px;
-  text-align: center;
-}
-
-.galeria h2 {
-  font-family: var(--fonte-titulo);
-  color: var(--marrom);
-  font-size: 2.4rem;
-  font-weight: 700;
-  margin-bottom: 30px;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  border-bottom: 3px solid var(--laranja);
-  display: inline-block;
-  padding-bottom: 8px;
-}
-
-.galeria-imagens {
+.galeria-espaco {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(2, auto);
-  gap: 20px;
-  justify-items: center;
-  align-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
   max-width: 960px;
   margin: 0 auto;
 }
 
-.galeria-imagens img {
-  width: 100%;
-  max-width: 300px;
-  height: auto;
-  border-radius: 15px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
-  cursor: pointer;
-}
-
-.galeria-imagens img:hover {
-  transform: scale(1.05);
-}
-
 .imagem-espaco {
   width: 100%;
-  height: auto;
-  cursor: pointer;
+  height: 150px;
+  object-fit: cover;
   border-radius: 8px;
+  cursor: pointer;
   transition: transform 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
 .imagem-espaco:hover {
-  transform: scale(1.03);
+  transform: scale(1.05);
 }
 
-/* Modal */
+/* ========== Modal ========== */
 .modal {
-  display: none;
+  display: none; /* escondido inicialmente */
   position: fixed;
-  z-index: 999;
-  padding-top: 60px;
+  z-index: 9999;
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
   overflow: auto;
   background-color: rgba(0,0,0,0.8);
+  padding-top: 60px;
 }
 
 .modal-conteudo {
-  margin: auto;
   display: block;
+  margin: 0 auto;
   max-width: 90%;
   max-height: 80vh;
   border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
 }
 
 .fechar {
@@ -291,13 +259,15 @@ section h2 {
   font-size: 40px;
   font-weight: bold;
   cursor: pointer;
-  transition: 0.3s;
+  transition: color 0.3s ease;
+  user-select: none;
 }
 
 .fechar:hover {
   color: #ccc;
 }
 
+/* ========== Contato ========== */
 .contato form {
   display: flex;
   flex-direction: column;
@@ -381,12 +351,9 @@ section h2 {
 }
 
 .redes-sociais a {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  text-decoration: none;
   color: var(--marrom);
-  font-weight: 500;
+  text-decoration: none;
+  font-size: 1.3rem;
   transition: color 0.3s ease;
 }
 
@@ -394,67 +361,46 @@ section h2 {
   color: var(--laranja);
 }
 
-.redes-sociais img {
-  width: 20px;
-  height: 20px;
-}
-
+/* ========== Footer ========== */
 footer {
+  margin-top: 80px;
+  padding: 20px;
+  font-size: 0.9rem;
+  color: #777;
   text-align: center;
-  padding: 24px;
-  background-color: var(--caramelo);
-  color: #6b4b3a;
-  font-size: 0.95rem;
-  margin-top: 48px;
-  border-top: 4px solid var(--amarelo);
+  border-top: 1px solid #ddd;
 }
 
+/* ========== Responsividade ========== */
 @media (max-width: 768px) {
+  header {
+    justify-content: center;
+  }
+  nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
   .hero {
     flex-direction: column;
-    text-align: center;
-    padding: 32px 20px;
   }
-
+  .apresentacao-texto {
+    max-width: 100%;
+  }
   .foto-ana {
-    width: 200px;
-    height: 200px;
+    margin-bottom: 24px;
   }
-
   .sobre img {
     float: none;
     display: block;
-    margin: 0 auto 24px;
+    margin: 0 auto 20px auto;
   }
-
-  nav ul {
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
-    margin-top: 10px;
+  .galeria-espaco {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
   }
 }
 
-.reveal-on-scroll {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.8s ease;
-}
-
-.reveal-on-scroll.reveal {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-p,
-ul,
-ol,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-button {
-  margin-bottom: 12px;
+/* Melhor contraste para acessibilidade */
+a:focus, button:focus {
+  outline: 2px solid var(--laranja);
+  outline-offset: 3px;
 }
