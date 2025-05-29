@@ -25,3 +25,25 @@ document.querySelectorAll('.reveal-on-scroll').forEach(el => {
 window.addEventListener('load', () => {
   document.body.classList.add('loaded')
 })
+
+const modal = document.getElementById("modal");
+  const modalImg = document.getElementById("imagem-ampliada");
+  const imagens = document.querySelectorAll(".imagem-espaco");
+  const fechar = document.querySelector(".fechar");
+
+  imagens.forEach(img => {
+    img.addEventListener("click", () => {
+      modal.style.display = "block";
+      modalImg.src = img.src;
+    });
+  });
+
+  fechar.onclick = () => {
+    modal.style.display = "none";
+  };
+
+  window.onclick = (event) => {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  };
