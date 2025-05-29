@@ -401,12 +401,13 @@ section h2 {
 
 /* ========== Footer ========== */
 footer {
-  margin-top: 80px;
-  padding: 20px;
-  font-size: 0.9rem;
-  color: #777;
   text-align: center;
-  border-top: 1px solid #ddd;
+  padding: 24px;
+  background-color: var(--caramelo);
+  color: #6b4b3a;
+  font-size: 0.95rem;
+  margin-top: 48px;
+  border-top: 4px solid var(--amarelo);
 }
 
 /* ========== Responsividade ========== */
