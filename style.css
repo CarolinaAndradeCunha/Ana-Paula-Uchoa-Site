@@ -437,7 +437,8 @@ footer {
 @media (max-width: 600px) {
   .logo {
     white-space: nowrap;
-    font-size: 1rem; /* ou ajuste como preferir */
+    font-size: 1.6rem;
+    text-align: center;
   }
 }
   .hero {
