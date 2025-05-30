@@ -47,6 +47,8 @@ header {
   font-family: var(--fonte-titulo);
   font-size: 2.2rem;
   color: var(--marrom);
+  font-weight: bold;
+  letter-spacing: 1px;
 }
 
 .logo-img {
