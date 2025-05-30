@@ -186,6 +186,17 @@ section h2 {
   color: #5a5a5a;
 }
 
+.abordagem h2,
+.abordagem h3 {
+  margin-bottom: 20px;
+}
+
+.abordagem p {
+  margin-top: 12px;
+  margin-bottom: 16px;
+  text-align: justify;
+}
+
 .abordagem ul,
 .servicos ul {
   display: flex;
