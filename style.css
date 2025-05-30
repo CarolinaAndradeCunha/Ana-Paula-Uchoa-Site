@@ -439,6 +439,7 @@ footer {
     white-space: nowrap;
     font-size: 1.6rem;
     text-align: center;
+    margin-bottom: 12px;
   }
 }
   .hero {
