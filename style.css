@@ -178,6 +178,7 @@ section h2 {
 
 .sobre p {
   margin-bottom: 16px;
+  text-align: justify;
 }
 
 .sobre .valores {
