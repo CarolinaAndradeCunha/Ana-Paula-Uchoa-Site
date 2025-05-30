@@ -415,10 +415,19 @@ footer {
   header {
     justify-content: center;
   }
+
   nav ul {
     flex-wrap: wrap;
     justify-content: center;
   }
+}
+
+@media (max-width: 600px) {
+  .logo {
+    white-space: nowrap;
+    font-size: 1rem; /* ou ajuste como preferir */
+  }
+}
   .hero {
     flex-direction: column;
   }
