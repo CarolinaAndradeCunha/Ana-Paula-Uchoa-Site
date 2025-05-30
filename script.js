@@ -1,4 +1,3 @@
-// Rolagem suave ao clicar nos links âncora
 document.querySelectorAll('a[href^="#"]').forEach(link => {
   link.addEventListener('click', function(e) {
     e.preventDefault();
@@ -11,7 +10,6 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
   });
 });
 
-// Revelar elementos ao rolar
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
@@ -24,12 +22,10 @@ document.querySelectorAll('.reveal-on-scroll').forEach(el => {
   observer.observe(el);
 });
 
-// Efeito ao carregar a página
 window.addEventListener('load', () => {
   document.body.classList.add('loaded');
 });
 
-// Modal de imagem (galeria)
 const modal = document.getElementById("modal");
 const modalImg = document.getElementById("imagem-ampliada");
 const imagens = document.querySelectorAll(".imagem-espaco");
@@ -43,17 +39,14 @@ imagens.forEach(img => {
   });
 });
 
-// Impede que clique na imagem feche o modal
 modalImg.addEventListener("click", (e) => {
   e.stopPropagation();
 });
 
-// Botão de fechar (X)
 fechar.onclick = () => {
   modal.style.display = "none";
 };
 
-// Fecha o modal ao clicar fora da imagem
 window.onclick = (event) => {
   if (event.target === modal) {
     modal.style.display = "none";
