@@ -52,3 +52,13 @@ window.onclick = (event) => {
     modal.style.display = "none";
   }
 };
+
+document.querySelector("form").addEventListener("submit", function(e) {
+  const email = document.getElementById("email").value.toLowerCase();
+  const bloqueados = ["mail.ru", "yandex.ru", "qq.com", "tempmail", "10minutemail"];
+
+  if (bloqueados.some(dom => email.includes(dom))) {
+    alert("Este domínio de e-mail não é permitido. Por favor, use outro.");
+    e.preventDefault();
+  }
+});
