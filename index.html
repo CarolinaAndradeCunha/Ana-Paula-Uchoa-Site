@@ -116,7 +116,7 @@
   <h2>Contato</h2>
 
 <form action="https://formsubmit.co/psi.anapaulauchoa@gmail.com" method="POST" class="reveal-on-scroll">
-  <input type="hidden" name="_captcha" value="false">
+<input type="hidden" name="_captcha" value="true">
 
   <label for="nome">Nome:</label>
   <input type="text" id="nome" name="nome" required autocomplete="name" />
@@ -125,7 +125,9 @@
   <input type="email" id="email" name="email" required autocomplete="email" />
 
   <label for="mensagem">Mensagem:</label>
-  <textarea id="mensagem" name="mensagem" rows="4" required autocomplete="on"></textarea>
+  <textarea id="mensagem" name="mensagem" rows="4" required minlength="20" autocomplete="on"></textarea>
+
+  <input type="text" name="_honey" style="display:none">
 
   <button type="submit">Enviar</button>
 </form>
